@@ -8,7 +8,7 @@
             });
         });*/
 
-
+//* mejorar el indentado
         contratoItem.addEventListener('click', function () {
         
             modContrato.style.display = 'block';
@@ -16,7 +16,7 @@
            
             const btnActualizar = document.getElementById('btnActualizar');
            
-    
+   
             document.getElementById('mod_nombre').value = contratoItem.dataset.nombre;
             document.getElementById('mod_descripcion').value = contratoItem.dataset.descripcion;
             document.getElementById('mod_manager').value = contratoItem.dataset.manager;
@@ -25,7 +25,14 @@
             document.getElementById('mod_tipo_contrato').value = contratoItem.dataset.tipo_contrato;
             document.getElementById('mod_fecha_inicio').value = contratoItem.dataset.fecha_inicio;
             document.getElementById('mod_fecha_fin').value = contratoItem.dataset.fecha_fin;
-    
+    //* como mejorar esta logica???
+    /**
+     * const {dataset} = contratoItem //*destructuring
+     *  const items = Object.key(dataset) //*claves del objeto
+     *  items.forEach((element)=>{ //*itero claves
+     * document.getElementById(`mod_${element}`).value = dataset[element] //*asigno las claves al elemento
+     * })
+     */ 
             console.log(contratoItem.dataset.id);
     
             btnActualizar.addEventListener('click', function () {
@@ -53,6 +60,7 @@
                         contratoItem.dataset.fecha_fin = updatedContrato.fecha_fin;
                     } else {
                         console.error("Error al eliminar el contrato.");
+                        //*si es un patch no elimina actualiza
                     }
                 });
     
