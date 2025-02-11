@@ -4,54 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styleABM.css">
-    <!--* colocar icono y titulo correctamente  -->
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="/css/styleABM.css">
+    <link rel="shortcut icon" href="./IMAGENES/logo Curvas.svg" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.2.1/js/dataTables.js"></script>
+    <title>Contratos</title>
+
 
 <body>
+
+
 
     <section id="newContrato" style="display:none;">
         <form id="formNuevoContrato" action="" method="post">
             <div>
-                <label id="label1" for="nuevo_nombre">Nombre:</label>
+                <label for="nuevo_nombre">Nombre:</label>
                 <input type="text" id="nuevo_nombre" name="nombre" required>
             </div>
             <div>
-                <label id="label1" for="nuevo_descripcion">Descripción:</label>
+                <label for="nuevo_descripcion">Descripción:</label>
                 <textarea id="nuevo_descripcion" name="descripcion" rows="4" cols="50" required></textarea>
             </div>
             <div>
-                <label id="label1" for="nuevo_manager">Manager:</label>
+                <label for="nuevo_manager">Manager:</label>
                 <input type="text" id="nuevo_manager" name="manager" required>
             </div>
             <div>
-                <label id="label1" for="nuevo_cliente">Cliente:</label>
+                <label for="nuevo_cliente">Cliente:</label>
                 <input type="text" id="nuevo_cliente" name="cliente" required>
             </div>
             <div>
-                <label id="label1" for="nuevo_unidad_negocio">Unidad de Negocio:</label>
+                <label for="nuevo_unidad_negocio">Unidad de Negocio:</label>
                 <input type="text" id="nuevo_unidad_negocio" name="unidad_negocio" required>
             </div>
             <div>
-                <label id="label1" for="nuevo_tipo_contrato">Tipo de Contrato:</label>
+                <label for="nuevo_tipo_contrato">Tipo de Contrato:</label>
                 <input type="text" id="nuevo_tipo_contrato" name="tipo_contrato" required>
             </div>
             <div>
-                <label id="label1" for="nuevo_fecha_inicio">Fecha de Inicio:</label>
+                <label for="nuevo_fecha_inicio">Fecha de Inicio:</label>
                 <input type="date" id="nuevo_fecha_inicio" name="fecha_inicio" required>
             </div>
             <div>
-                <label id="label1" for="nuevo_fecha_fin">Fecha de Fin:</label>
+                <label for="nuevo_fecha_fin">Fecha de Fin:</label>
                 <input type="date" id="nuevo_fecha_fin" name="fecha_fin" required>
             </div>
-            <div id="botones">
-            <button id="btnCrear" type="submit">Crear Contrato</button>
-            <button id="btnCancelar" type="button">Cancelar</button>
+            <div>
+                <button id="btnCrear" type="submit">Crear Contrato</button>
+                <button id="btnCancelar" type="button">Cancelar</button>
             </div>
         </form>
     </section>
-    <img id="fotoTali" src="./IMAGENES/taligent2_logo.png" alt="Logo Taligent">
+
     <section id="modificarContrato" style="display: none;">
         <form id="formModificarContrato" action="" method="post">
             <label for="mod_nombre">Nombre:</label>
@@ -77,23 +82,42 @@
 
             <label for="mod_fecha_fin">Fecha de Fin:</label>
             <input type="date" id="mod_fecha_fin" name="fecha_fin" required><br><br>
-            
+
             <div id="botones">
-            <button id="btnActualizar" type="submit">Actualizar</button>
-            <button id="btnCancelar2" type="button">Cancelar</button>
-            <button id="btnEliminar" type="button" >Borrar</button>
+                <button id="btnActualizar" type="submit">Actualizar</button>
+                <button id="btnCancelar2" type="button">Cancelar</button>
             </div>
-            
+
         </form>
     </section>
-    <section id="lista">
-        <ul id="listaContratos">
-            
-        </ul>
+
+    <img id="fotoTali" src="/IMAGENES/taligent2_logo.png" alt="Logo Taligent">
+
+
+
+    <section>
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cliente</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
+                    <th>Acciones</th>
+                </tr>
+
+            </thead>
+            <tbody>
+            </tbody>
+
+        </table>
         <button id="cargar">Nuevo contrato</button>
+
     </section>
-    
-    <script   src="./jsABM.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/funciones.js"></script>
+    <script type="module" src="./js/ABM.js"></script>
+
 </body>
 
 </html>
